@@ -1,4 +1,4 @@
-package commos;
+package commons;
 
 public class BaseTest {
 
