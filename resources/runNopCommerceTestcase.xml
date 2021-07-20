@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Bank Gurru">
+	<test name="Run on FIREFOX">
+		<classes>
+			<class name="com.nopcommerce.login.Level_03_Register_And_Login_BasePage_3" />
+		</classes>
+	</test>
+</suite>
