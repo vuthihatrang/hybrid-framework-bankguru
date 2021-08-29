@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite parallel="false" name="Bank Gurru">
 	<test name="Run on FIREFOX">
+	<parameter name="browser" value="firefox"/>
 		<classes>
-			<class name="com.bankguru.login.Level_01_Register_And_Login_Repeat" />
+			<class name="com.bankguru.login.Level_04_Register_And_Login_Multiple_Browser" />
+		</classes>
+	</test>
+	
+	<test name="Run on Chorme">
+	<parameter name="browser" value="chorme"/>
+		<classes>
+			<class name="com.bankguru.login.Level_04_Register_And_Login_Multiple_Browser" />
 		</classes>
 	</test>
 </suite>
