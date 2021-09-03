@@ -15,6 +15,15 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import baseObject.nopCommerce.MyAccountPageObject;
+import baseObject.nopCommerce.OrderPageObject;
+import baseObject.nopCommerce.PageGeneratorManager;
+import baseObject.nopCommerce.SearchPageObject;
+import pageUIs.nopCommerce.BasePageUI;
+import pageUIs.nopCommerce.HomePageUI;
+import pageUIs.nopCommerce.MyAccountPageUI;
+import pageUIs.nopCommerce.SearchPageUI;
+
 public class BasePage {
 	
 	public static BasePage getBasePage() {
@@ -366,6 +375,22 @@ public class BasePage {
 	public void waitForElementInvisibale(WebDriver driver, String locator) {
 		explicitWait = new WebDriverWait(driver, timeout);
 		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(getByXpath(locator)));
+	}
+	
+	public MyAccountPageObject openMyAccountPage(WebDriver driver) {
+		waitForElementClickable(driver, BasePageUI.MY_ACCOUNT_FOOTER);
+		clickToElement(driver, BasePageUI.MY_ACCOUNT_FOOTER);
+		return PageGeneratorManager.getMyAccountPage(driver);
+	}
+	public SearchPageObject openSearchPage(WebDriver driver) {
+		waitForElementClickable(driver, BasePageUI.SEARCH_PAGE_FOOTER);
+		clickToElement(driver, BasePageUI.SEARCH_PAGE_FOOTER);
+		return PageGeneratorManager.getSearchPage(driver);
+	}
+	public OrderPageObject openOrderPage(WebDriver driver) {
+		waitForElementClickable(driver, BasePageUI.ODER_PAGE_FOOTER);
+		clickToElement(driver,  BasePageUI.ODER_PAGE_FOOTER);
+		return PageGeneratorManager.getOrderPage(driver);
 	}
 	
 	private Alert alert;

@@ -6,6 +6,9 @@ public class PageGeneratorManager {
 	private static HomePageObject homePage;	
 	private static LoginPageObject loginPage;	
 	private static RegisterPageObject registerPage;	
+	private static SearchPageObject searchPage;	
+	private static MyAccountPageObject myAccountPage;	
+	private static OrderPageObject orderPage;	
 	
 	//ngăn chặn các hàm khcas khởi tạo dc class
 	private PageGeneratorManager() {
@@ -31,6 +34,24 @@ public class PageGeneratorManager {
 			registerPage= new RegisterPageObject(driver);
 		}
 		return registerPage;	
+	}
+	public static SearchPageObject getSearchPage(WebDriver driver) {
+		if(searchPage == null) {
+			searchPage= new SearchPageObject(driver);
+		}
+		return searchPage;	
+	}
+	public static MyAccountPageObject getMyAccountPage(WebDriver driver) {
+		if(myAccountPage == null) {
+			myAccountPage= new MyAccountPageObject(driver);
+		}
+		return myAccountPage;	
+	}
+	public static OrderPageObject getOrderPage(WebDriver driver) {
+		if(orderPage == null) {
+			orderPage= new OrderPageObject(driver);
+		}
+		return orderPage;	
 	}
 
 }
